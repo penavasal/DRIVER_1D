@@ -1,0 +1,34 @@
+//
+// Problema para pruebas     
+
+* TYPE_OF_PROBLEM
+
+// ---- Plot-Save options
+INIT_FILE 0
+SAVE_FREQUENCY 1
+FILE_FREQUENCY 1
+
+
+// ------Files------
+MATERIAL mat_DP.txt
+OUTPUT FILE
+
+// ------Time scheme -----
+TIME_FINAL 5E-3
+TIME_STEP 0.5E-5
+TIME_FACTOR 1.0005
+
+// --------Problem---------
+// SIMPLE_SHEAR
+// TRIAXIAL
+// TRIAXIAL_CYCLIC
+
+PROBLEM_TYPE TRIAXIAL
+DRAINED NO
+FINAL_DEVIATORIC_STRAIN 0.015
+// STEPS_BY_CYCLE 200
+// MAX_Q 50E6
+// MIN_Q -50E6
+
+
+

@@ -1,0 +1,14 @@
+//
+// Materiales de prueba 
+
+MATERIALS 1
+
+MAT 1 LINEAR_ELASTIC
+DENSITY 7833
+YOUNG 200E9
+POISSON 0.0001
+
+
+
+
+
