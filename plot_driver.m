@@ -36,7 +36,8 @@ if nargin==0
 else
     str=strcat(varargin{1},'.mat');
 end
-plot_constitutive(1,str);
+%plot_constitutive(1,str);
+PLOT('CONSTITUTIVE',s,str,'E',1,varargin{2:end})
 
 
 

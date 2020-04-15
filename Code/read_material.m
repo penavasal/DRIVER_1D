@@ -579,6 +579,7 @@ function Mat=mcc_tools(Mat)
 
     global SOLVER
 
+    % M
     if isempty(Mat{19}) & isempty(Mat{11})
         disp('Error, no critical state line!')
         stop
@@ -619,7 +620,10 @@ function Mat=mcc_tools(Mat)
         stop
     end
     
-    %%% E
+    %%% Elastic
+    if isempty(Mat{29})
+        Mat(29)={-str2double(Mat{25})/Mat{22}};
+    end
     if isempty(Mat{1}) && isempty(Mat{5}) && isempty(Mat{2})
         Mat(5)={Mat{29}-2/3*Mat{4}};                         % Lambda
         Mat(1)={Mat{4}*(3*Mat{5}+2*Mat{4})/(Mat{4}+Mat{5})}; % E
