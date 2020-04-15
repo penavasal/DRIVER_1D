@@ -10,7 +10,7 @@ FILE_FREQUENCY 1
 
 
 // ------Files------
-MATERIAL mat_mcc.txt
+MATERIAL mat_PZ.txt
 OUTPUT FILE
 
 // ------Time scheme -----
