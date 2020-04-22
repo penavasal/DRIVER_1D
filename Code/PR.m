@@ -56,10 +56,14 @@
                     S=-def/steps;
                     St=S*STEP.ste;
                     
+                    if STEP.ste==19
+                        S;
+                    end
+                    
                     [Ps,Qs]=VECTORS.invar(Mat_state.Sigma(:,1),1); 
                     [xi1,xi2]=PR.calcula_xi2(Ps,Qs,Int_var,St);  
                     
-                    V= xi1 + xi2*S;
+                    V= -xi1 + xi2*S;
 
                     e1=V/3+S;
                     e3=V/3-S/2;
@@ -152,8 +156,8 @@
             elseif MODEL(Mat(e),1)>=4 && MODEL(Mat(e),1)<5
                 [D11,D22,D12]=PR.xi_PZ(p,q,Int_var.P0);
             end
-            xi2=(D22+3*D12)/(3*D11+D12);
-            xi1=(Int_var.epsv(e,2)-Int_var.epsv(e,3))+...
+            xi2=(D22-3*D12)/(3*D11-D12);
+            xi1=(Int_var.epsv(e,2)-Int_var.epsv(e,3))-...
                 xi2*(Int_var.gamma(e,2)-Int_var.gamma(e,3));
             
             e;
@@ -203,7 +207,7 @@
             
             K=-p/k;
             G=-q/epses;
-            J=k*(G-3*mu0*epses);
+            J=-k*(G-3*mu0*epses);
 
         end
     end
