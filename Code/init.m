@@ -26,6 +26,7 @@ function [STEP,MAT_POINT,Int_var,Mat_state,GLOBAL]=init(MAT_POINT)
         STEP.t=0;
         STEP.dt=SOLVER.time_step(STEP.BLCK);
     end
+    STEP.FAIL=0;
     
     
     %----------------------------------------------------------------------

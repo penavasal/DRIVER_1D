@@ -81,9 +81,9 @@ function [STEP,MAT_POINT,GLOBAL]=MP_solver(...
         end
 
         % 4. Save info
-        if ((rem(STEP.ste/SOLVER.SAVE_I,SOLVER.SAVE_F)==0) || (SOLVER.FAIL==1))
+        if ((rem(STEP.ste/SOLVER.SAVE_I,SOLVER.SAVE_F)==0) || (STEP.FAIL==1))
             save(SOLVER.Output(BLCK),'MAT_POINT','GLOBAL','-append')
-            if SOLVER.FAIL==1
+            if STEP.FAIL==1
                 stop
             end  
         end
